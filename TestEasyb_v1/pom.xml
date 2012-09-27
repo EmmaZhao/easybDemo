@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>TestEasyb</groupId>
+  <artifactId>com.TestEasyb</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+		<build>
+				<plugins>
+					<!-- jdk version -->
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>1.6</source>
+							<target>1.6</target>
+						</configuration>
+					</plugin>
+					<!-- 配置easyb -->
+					<plugin>
+					        <groupId>org.easyb</groupId>
+					        <artifactId>maven-easyb-plugin</artifactId>
+					        <executions>
+					          <execution>
+					            <goals>
+					              <goal>test</goal>
+					            </goals>       					        						        
+					           </execution>
+					        </executions>
+					        <configuration>
+						          <easybTestDirectory>${basedir}/src/test/stories</easybTestDirectory>
+						          <storyReport>target/easyb/easyb-stories.txt</storyReport>
+						          <xmlReport>target/easyb/easyb-report.xml</xmlReport>
+						    </configuration>
+      				</plugin>
+				</plugins>
+			</build>
+
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.easyb</groupId>
+  		<artifactId>maven-easyb-plugin</artifactId>
+  		<version>1.4</version>
+  	</dependency>
+  	<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.16.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>2.19.0</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.easyb</groupId>
+			<artifactId>easyb</artifactId>
+			<version>0.9.7</version>
+		</dependency> -->
+  </dependencies>
+</project>

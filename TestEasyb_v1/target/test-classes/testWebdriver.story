@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -12,6 +13,7 @@ scenario "test open baidu url", {
 	 given "open baidu", {
 	  driver.get("http://www.baidu.com");
 	  Thread.sleep(1000);
+	  Assert.assertEquals(1,2);
 	 }
 }
 	
